@@ -34,7 +34,7 @@ Build with [Create React App](https://github.com/facebook/create-react-app).
 ![Demographic analysis page](./Demographics.png)
 
 ## Demographics analysis API
-- connecting the [Clarifi API](https://clarifai.com/models/demographics-image-recognition-model-c0c0ac362b03416da06ab3fa36fb58e3)
+- Connecting to [Clarifi API](https://clarifai.com/models/demographics-image-recognition-model-c0c0ac362b03416da06ab3fa36fb58e3)
 
 Refer to the [backend repository](https://github.com/ambitiousbird/demographics-api) for more details.
 ```
