@@ -33,6 +33,79 @@ Build with [Create React App](https://github.com/facebook/create-react-app).
 - Demographics Analysis
 ![Demographic analysis page](./Demographics.png)
 
+## Demographics analysis API
+- connecting the Clarifi API
+Refer to the [backend repository](https://github.com/ambitiousbird/demographics-api) for details
+```
+const Clarifai=require('clarifai');
+
+const app = new Clarifai.App({
+    apiKey: 'cf36ce8e02514f0c8eead8853a714662'
+});
+
+const APICallHandler=()=>(req,res)=>{
+    app.models.predict('c0c0ac362b03416da06ab3fa36fb58e3',req.body.input)
+        .then(data=>{
+            res.json(data);
+        })
+        .catch(err=>res.status(400).json('Unable to get API response'));
+}
+```
+- Fetch response from the API:
+```
+fetch('https://demographics-api.herokuapp.com/imageurl',{
+        method:'post',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          input:this.state.input
+        })
+      })
+      .then(response=>response.json())
+      .then(response=>{
+        //increment user usuage count
+        if(response){
+          fetch('https://demographics-api.herokuapp.com/image',{
+              method:'put',
+              headers:{'Content-Type':'application/json'},
+              body:JSON.stringify({
+                id:this.state.user.id
+              })
+          })
+          .then(response=>response.json())
+          .then(count=>{
+            this.setState(Object.assign(this.state.user, {entries:count}))
+          })
+          .catch(console.log);
+        }
+        this.detectFace(this.calculateFacePosition(response));
+      })
+      .catch(err=>console.log(err));
+```
+Using the reponse data for front end DOM:
+```
+  calculateFacePosition=(data)=>{
+    const face = data.outputs[0].data.regions[0].region_info.bounding_box;
+    const demographics = data.outputs[0].data.regions[0].data.face;
+    const image = document.getElementById("inputimage");
+    const width=Number(image.width);
+    const height=Number(image.height);
+    return{
+      leftCol: face.left_col*width,
+      topRow: face.top_row*height,
+      rightCol: width-(face.right_col*width),
+      bottomRow: height-(face.bottom_row)*height,
+      
+      age:demographics.age_appearance.concepts[0].name,
+      ageValue:demographics.age_appearance.concepts[0].value,
+      gender:demographics.gender_appearance.concepts[0].name,
+      genderValue:demographics.gender_appearance.concepts[0].value,
+      multicultural:demographics.multicultural_appearance.concepts[0].name,
+      multiculturalValue:demographics.multicultural_appearance.concepts[0].value
+    }
+    
+}
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
