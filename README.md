@@ -84,7 +84,7 @@ fetch('https://demographics-api.herokuapp.com/imageurl',{
 ```
 Using the reponse data for front end DOM:
 ```
-  calculateFacePosition=(data)=>{
+  calculateFaceInfo=(data)=>{
     const face = data.outputs[0].data.regions[0].region_info.bounding_box;
     const demographics = data.outputs[0].data.regions[0].data.face;
     const image = document.getElementById("inputimage");
