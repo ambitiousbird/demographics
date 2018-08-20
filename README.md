@@ -14,11 +14,11 @@
 
 Demographics Analysis is a react based web application that does dedemographic analysis based on image URLs.
 
-Build with [Create React App.](https://github.com/facebook/create-react-app)
+Build with [Create React App](https://github.com/facebook/create-react-app).
 
-[Online preview](https://smartbrain-demographics.herokuapp.com/)
+[Click here](https://smartbrain-demographics.herokuapp.com/) for online preview.
 
-###### Tech stack
+##### Tech stack
 ``` Webpack + React + React Router + Node.js + Express + PostgreSQL + Heroku ```
 
 
@@ -26,7 +26,12 @@ Build with [Create React App.](https://github.com/facebook/create-react-app)
 
 - User Signup
 ![user sign up page](./signUp.png)
-
+- User Signin
+![user sign in page](./signIn.png)
+- Logged in Page
+![logged in page](./loggedIn.png)
+- Demographics Analysis
+![Demographic analysis page](./Demographics.png)
 
 ## Available Scripts
 
