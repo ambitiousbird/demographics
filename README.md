@@ -3,7 +3,7 @@
 
 - [Introduction](#introduction)
 - [Basic Functionalities](#basic-functionalities)
-- [Folder Structure](#folder-structure)
+- [Demographics analysis API](#demographics-analysis-API)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
@@ -34,7 +34,8 @@ Build with [Create React App](https://github.com/facebook/create-react-app).
 ![Demographic analysis page](./Demographics.png)
 
 ## Demographics analysis API
-- connecting the Clarifi API
+- connecting the [Clarifi API](https://clarifai.com/models/demographics-image-recognition-model-c0c0ac362b03416da06ab3fa36fb58e3)
+
 Refer to the [backend repository](https://github.com/ambitiousbird/demographics-api) for details
 ```
 const Clarifai=require('clarifai');
