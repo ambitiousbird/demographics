@@ -10,14 +10,12 @@
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
 
-##Introduction
+## Introduction
 
+Demographics Analysis is a react based web application that does dedemographic analysis based on image URLs.
 
-
-
-
-
-
+### Tech stack
+``` Webpack + React + React Router + Node.js + Express + PostgreSQL + Heroku ```
 
 
 ## Available Scripts
