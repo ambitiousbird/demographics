@@ -3,7 +3,7 @@
 
 - [Introduction](#introduction)
 - [Basic Functionalities](#basic-functionalities)
-- [Demographics analysis API](#demographics-analysis-API)
+- [Demographics analysis API](#demographics-analysis-api)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
